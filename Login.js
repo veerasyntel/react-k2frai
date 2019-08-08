@@ -19,6 +19,14 @@ const Login = (props) => {
   useEffect(() => {
     // userNameRef.current.focus();
   });
+  const Print = () => {
+    return (
+      <ReactToPrint
+        trigger={() => <a href='#'style={{color: 'white'}}>Print</a>}
+        content={() => loginRef.current}
+      ></ReactToPrint>
+    )
+  }
 
   return (
     <>
@@ -41,11 +49,8 @@ const Login = (props) => {
         />
         <Button onClick={handleLogin}>Login</Button>
         <Button onClick={handleSignUp}>Sign Up</Button>
+        <Print/>
       </LoginSection>
-      <ReactToPrint
-        trigger={() => <button>Print this out!</button>}
-        content={() => loginRef.current}
-      />
     </>
   )
 }
